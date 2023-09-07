@@ -43,6 +43,8 @@ body{
     background-repeat: no-repeat; 
 } */
 
+
+
 body {
     display: flex;
     justify-content: center;
@@ -51,25 +53,49 @@ body {
     margin: 0;
 }
 
-.container {
-    position: relative;
-    overflow: hidden;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    background-repeat: no-repeat;
-    cursor: none;
-}
-
-.magnifier {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 5px solid white;
-    pointer-events: none;
+.hidden{
     display: none;
 }
+
+@media only screen and (max-width: 428px){
+    .container {
+        position: relative;
+        overflow: hidden;
+    }
+    img {
+        max-width: 100%;
+        min-height: 600px;
+        display: block;
+        cursor: none;
+        object-fit: cover;
+    }
+    .magnifier {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 5px solid white;
+        pointer-events: none;
+        display: none;
+        background-repeat: no-repeat;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .magnifier {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid white;
+        pointer-events: none;
+        display: none;
+        background-repeat: no-repeat;
+    }
+}
+
+
+
+
+
