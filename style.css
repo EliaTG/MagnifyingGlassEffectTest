@@ -98,6 +98,9 @@ img {
     .cta {
         width: 49%;
     }
+    .containerCta {
+        bottom: 12%; 
+    }
     #image1, 
     #image2{
         max-height: 100vh; 
@@ -108,8 +111,8 @@ img {
         background-repeat: no-repeat;
     }
     .magnifier {
-        width: 150px;
-        height: 150px;
+        width: 190px;
+        height: 190px;
     }
     
 }
