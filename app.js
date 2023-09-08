@@ -28,7 +28,7 @@ const image1 = document.getElementById('image1');
 const image2 = document.getElementById('image2');
 
 
-let zoomLevel = 2; // Here you can adjust the zoom level.
+let zoomLevel = 2.5; // Here you can adjust the zoom level.
 
 // Change the size of the second image based on the zoom.
 image2.style.width = `${image1.width * zoomLevel}px`;
@@ -70,8 +70,34 @@ function handleMove(e) {
 
 
         magnifier.style.display = 'block';
-        magnifier.style.left = `${x - magnifier.offsetWidth / 2}px`;
-        magnifier.style.top = `${y - magnifier.offsetHeight / 2}px`;
+
+     
+          // "Calculate the background position of the magnifying glass, adjusting if it reaches the right limit
+        let backgroundX = -imageX;
+        if (backgroundX > 0) {
+            backgroundX = 0;
+        } else if (backgroundX < -(image2.width - magnifier.offsetWidth)) {
+            backgroundX = -(image2.width - magnifier.offsetWidth);
+        }
+
+        // Update the background position of the magnifying glass
+        magnifier.style.backgroundPosition = `${backgroundX}px -${imageY}px`;
+        magnifier.style.display = 'block';
+
+        // Calculate the maximum left, top, right, and bottom values to keep the magnifier inside the container
+        const maxLeft = container.offsetWidth - magnifier.offsetWidth;
+        const maxTop = container.offsetHeight - magnifier.offsetHeight;
+
+        // Adjust the position of the magnifier
+        let left = x - magnifier.offsetWidth / 2;
+        let top = y - magnifier.offsetHeight / 2;
+
+        // Ensure the magnifier stays within the boundaries
+        left = Math.min(maxLeft, Math.max(0, left));
+        top = Math.min(maxTop, Math.max(0, top));
+
+        magnifier.style.left = `${left}px`;
+        magnifier.style.top = `${top}px`;
     }
 }
 
