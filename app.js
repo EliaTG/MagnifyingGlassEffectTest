@@ -37,7 +37,6 @@ container.addEventListener('mouseleave', () => {
 
 // Touchmove for mobile and tablet versions
 
-
 container.addEventListener('mousemove', (e) => {
     updateMagnifier(e.clientX, e.clientY);
 });
@@ -71,3 +70,39 @@ function updateMagnifier(x, y) {
     magnifier.style.left = `${x - magnifier.offsetWidth / 2}px`;
     magnifier.style.top = `${y - magnifier.offsetHeight / 2}px`;
 }
+
+
+// Greensock animation
+// const cta = document.querySelector(".cta")
+
+// const scaleTween = gsap.to(cta, {scale: 1, repeat: 9, yoyo: true, paused: true});
+
+// cta.addEventListener("mouseenter", ()=> scaleTween.restart())
+
+// cta.addEventListener("mouseleave", ()=> {
+//   scaleTween.pause()
+//   gsap.to(cta, {scale:0.8})
+  
+// })
+
+// Button pulse effect
+document.addEventListener("DOMContentLoaded", () => {
+    const cta = document.querySelector(".cta");
+    const pulseTween = gsap.to(cta, { scale: 0.9, repeat: 9, yoyo: true,  paused: true});
+    
+    function mouseEnter() {
+        pulseTween.restart();
+    }
+    function mouseLeave() {
+        pulseTween.restart();
+    }
+    function touchMove() {
+        mouseEnter();
+    }
+
+    cta.addEventListener("mouseenter", mouseEnter);
+    cta.addEventListener("mouseleave", mouseLeave);
+    cta.addEventListener("touchmove", touchMove);
+
+
+});
