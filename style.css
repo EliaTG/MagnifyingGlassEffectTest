@@ -123,8 +123,8 @@ img {
         height: 100vh;
     }
     .magnifier {
-        width: 170px;
-        height: 170px;
+        width: 175px;
+        height: 175px;
     }
     .cta {
         width: 40%;
@@ -132,6 +132,12 @@ img {
     .containerCta {
         bottom: 10%; 
     }
+    .imagen1{
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+    
 }
 
 @media only screen and (min-width: 1024px) {

@@ -1,4 +1,6 @@
 
+document.addEventListener("DOMContentLoaded", () => {
+
 // Button pulse effect
 document.addEventListener("DOMContentLoaded", () => {
     const cta = document.querySelector(".cta");
@@ -17,8 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cta.addEventListener("mouseenter", mouseEnter);
     cta.addEventListener("mouseleave", mouseLeave);
     cta.addEventListener("touchmove", touchMove);
-
-
 });
 
 // DOM manipulation
@@ -71,7 +71,6 @@ function handleMove(e) {
 
         magnifier.style.display = 'block';
 
-     
           // "Calculate the background position of the magnifying glass, adjusting if it reaches the right limit
         let backgroundX = -imageX;
         if (backgroundX > 0) {
@@ -104,3 +103,4 @@ function handleMove(e) {
 container.addEventListener('mousemove', handleMove);
 container.addEventListener('touchmove', handleMove);
 
+});
