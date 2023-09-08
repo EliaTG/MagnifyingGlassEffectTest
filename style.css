@@ -70,7 +70,7 @@ img {
 .magnifier {
     position: absolute;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 7px solid white;
     pointer-events: none;
     display: none;
     background-repeat: no-repeat;
@@ -84,29 +84,32 @@ img {
 }
   
 .cta {
-    width: 20%;
     object-fit: cover;
     cursor: pointer;
     margin: 0 auto;
     z-index: 10;
-    max-width: none;
     height: auto;
 }
 
 @media only screen and (max-width: 428px){
-    img {
-        max-width: 100%; 
-        min-width: 220px; 
-        width: auto; 
-        max-height: 100vh; 
-        height: 100vh; 
-    }
-    .magnifier {
-        width: 120px;
-        height: 120px;
+    .container{
+        width: 100%; 
     }
     .cta {
-        width: 15%;
+        width: 49%;
+    }
+    #image1, 
+    #image2{
+        max-height: 100vh; 
+        height: 100vh; 
+        min-width: 320px;
+        width: 100%;
+        object-fit: cover;
+        background-repeat: no-repeat;
+    }
+    .magnifier {
+        width: 150px;
+        height: 150px;
     }
     
 }
